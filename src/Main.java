@@ -42,18 +42,28 @@ public class Main {
         expForWeek[3] = 700;
         expForWeek[4] = 1000;
         int sum3 = 0;
-        float avg = 0;
+        float avg;
         for (int element : expForWeek) {
             sum3 += element;
         }
-        avg = sum3 / expForWeek.length;
+        avg = (float) sum3 / expForWeek.length;
         System.out.println("Средняя сумма трат за месяц составила " + avg + " рублей");
 
         //Задача 4
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        System.out.println("Массив перед реверсом: ");
 
+        for (char value : reverseFullName) {
+            System.out.print(value);
+        }
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
+        }
+        System.out.println("\nМассив после реверса: ");
+        for (char c : reverseFullName) {
+            System.out.print(c);
         }
 
     }
